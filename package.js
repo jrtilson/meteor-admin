@@ -1,8 +1,8 @@
 Package.describe({
-  name: "yogiben:admin",
-  summary: "A complete admin dashboard solution",
+  name: "jrtilson:admin",
+  summary: "A complete admin dashboard solution (forked from yogiben/meteor-admin)",
   version: "1.2.8",
-  git: "https://github.com/yogiben/meteor-admin"
+  git: "https://github.com/jrtilson/meteor-admin"
 });
 
 Package.on_use(function(api){
@@ -31,16 +31,16 @@ Package.on_use(function(api){
     ],
     both);
 
-  api.use(['less@1.0.0 || 2.5.0','session','jquery','templating'],'client')
+  api.use(['session','jquery','templating'],'client')
 
   api.use(['email'],'server')
 
   api.add_files([
-    'lib/both/AdminDashboard.coffee',
-    'lib/both/router.coffee',
-    'lib/both/utils.coffee',
-    'lib/both/startup.coffee',
-    'lib/both/collections.coffee'
+    'lib/both/AdminDashboard.js',
+    'lib/both/router.js',
+    'lib/both/utils.js',
+    'lib/both/startup.js',
+    'lib/both/collections.js'
     ], both);
 
   api.add_files([
@@ -49,18 +49,18 @@ Package.on_use(function(api){
     'lib/client/html/admin_layouts.html',
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
-    'lib/client/css/admin-custom.less',
+    'lib/client/css/admin-custom.css',
     'lib/client/js/admin_layout.js',
-    'lib/client/js/helpers.coffee',
-    'lib/client/js/templates.coffee',
-    'lib/client/js/events.coffee',
+    'lib/client/js/helpers.js',
+    'lib/client/js/templates.js',
+    'lib/client/js/events.js',
     'lib/client/js/slim_scroll.js',
-    'lib/client/js/autoForm.coffee'
+    'lib/client/js/autoForm.js'
     ], 'client');
 
   api.add_files([
-    'lib/server/publish.coffee',
-    'lib/server/methods.coffee'
+    'lib/server/publish.js',
+    'lib/server/methods.js'
     ], 'server');
 
   api.export('AdminDashboard',both)
