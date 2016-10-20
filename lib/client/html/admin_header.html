@@ -30,11 +30,13 @@
                             <span>Admin<i class="caret"></i></span>
                         </a>
                         <ul class="dropdown-menu">
+                            {{#unless AdminConfig.dashboard.hideYourProfile}}
                             <li class="">
                             <a href="{{pathFor 'adminDashboardUsersEdit' _id=currentUser._id}}">
                                 Your profile
                                 </a>
                             </li>
+                            {{/unless}}
                             <li class="">
                                 <a href="#" class="btn-sign-out">Sign out
                                 </a>
